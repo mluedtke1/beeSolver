@@ -1,5 +1,9 @@
 <input [(ngModel)]="centerLetter" placeholder="Center Letter">
 <input [(ngModel)]="letters" placeholder="Letters">
 <button (click)="submit()" text="submit">Submit</button>
-<h3>{{cLetter}}</h3>
-<h3>{{letts}}</h3>
+<h3 [hidden]=!isThereData()>{{cLetter}} | {{letts}}</h3>
+<h1></h1>
+<th>possible words {{acceptableWords.length}}</th>
+<div *ngFor="let word of acceptableWords">
+    <td>{{word}}</td>
+</div>
